@@ -12,23 +12,28 @@ const createDiv = (className) => {
 
 const createGrid = (num) => {
     gridContainerDiv.style.gridTemplateColumns = `repeat(${num}, 1fr)`
+
+    const gridItems = []
     for (let i = 0; i < num * num; i++) {
         let gridItem = createDiv("grid-item");
         gridContainerDiv.appendChild(gridItem);
+        gridItems.push(gridItem)
     }
+    enableSketch(gridItems)
 }
 
 const updateGrid = (gridSize) => {
     //remove current grid items
     let curGridItems = document.querySelectorAll('.grid-item')
+    // gridContainerDiv.childNodes.remove()
+
     curGridItems.forEach((item) => {
         item.remove()
     })
     createGrid(gridSize)
 }
 
-const sketch = (gridItems) => {
-    console.log('sketch')
+const enableSketch = (gridItems) => {
     gridItems.forEach((item) => {
         item.addEventListener('mousedown', () => {
             // console.log(sketch)
@@ -42,11 +47,9 @@ const sketch = (gridItems) => {
             }
 
         })
-        item.addEventListener('mouseup', () => {
+        containerEle.addEventListener('mouseup', () => {
             trigger = false;
-
         })
-
     })
 }
 
@@ -58,11 +61,6 @@ createGrid(gridSize);
 //add user selection section 
 const userSelection = createDiv("userSelection")
 containerEle.appendChild(userSelection)
-
-//select grid items
-let gridItems = document.querySelectorAll('.grid-item')
-//draw on grid
-sketch(gridItems)
 
 //create grid size range slider
 const gridSizeSlier = document.createElement("input")
@@ -82,13 +80,19 @@ gridSizeSlier.addEventListener('mouseup', (slider) => {
     //update the grid size text
     gridSizeSelection.innerHTML = `${gridSize} x ${gridSize}`
 
-    gridSizeSlier.setAttribute('placeholder', slider.target.value)
+    // gridSizeSlier.setAttribute('placeholder', slider.target.value)
     updateGrid(gridSize)
     //select the latest grid items and draw
-    gridItems = document.querySelectorAll('.grid-item')
-    sketch(gridItems)
+    // gridItems = document.querySelectorAll('.grid-item')
+    // sketch(gridItems)
 })
 
 
+// eraser 
+// pick canvas color
+// pick grid item color
+
+// random rgb color 
+// add 10% of black for each press 
 
 
