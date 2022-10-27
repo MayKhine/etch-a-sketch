@@ -121,33 +121,39 @@ const userSelection = createDiv("user-selection")
 containerEle.appendChild(userSelection)
 
 //create canvs section 
-const canvasSection = createDiv("canvas")
-userSelection.appendChild(canvasSection)
+// const canvasSection = createDiv("canvas")
+// userSelection.appendChild(canvasSection)
 
 //create grid size selection 
-const gridSizeSelectSection = createDiv("grid-size-section")
-canvasSection.appendChild(gridSizeSelectSection)
+// const gridSizeSelectSection = createDiv("grid-size-section")
+// canvasSection.appendChild(gridSizeSelectSection)
 //create grid size range slider
 const gridSizeSlider = document.createElement("input")
 gridSizeSlider.setAttribute('type', 'range')
 gridSizeSlider.setAttribute('min', '1')
 gridSizeSlider.setAttribute('max', '100')
 gridSizeSlider.setAttribute('value', gridSize)
-gridSizeSelectSection.appendChild(gridSizeSlider)
+// gridSizeSelectSection.appendChild(gridSizeSlider)
+userSelection.appendChild(gridSizeSlider)
 const gridSizeSelection = document.createElement("div")
 gridSizeSelection.innerHTML = `Grid size: ${gridSize} x ${gridSize}`
-gridSizeSelectSection.appendChild(gridSizeSelection)
+// gridSizeSelectSection.appendChild(gridSizeSelection)
+userSelection.appendChild(gridSizeSelection)
 
 //create canvas color section 
 const canvasColorSection = createDiv('canvas-color-section')
 canvasColorSection.innerHTML = 'Canvas Color'
-canvasSection.appendChild(canvasColorSection)
+// canvasSection.appendChild(canvasColorSection)
+userSelection.appendChild(canvasColorSection)
+
 //create canvas color picker
 const canvasColorPicker = document.createElement("input")
 canvasColorPicker.classList.add('color-picker')
 canvasColorPicker.setAttribute('type', 'color')
 canvasColorPicker.setAttribute('value', canvasColor)
-canvasColorSection.appendChild(canvasColorPicker)
+// canvasColorSection.appendChild(canvasColorPicker)
+userSelection.appendChild(canvasColorPicker)
+
 
 //grid line 
 // const gridLineSection = createDiv('grid-line-section')
@@ -157,8 +163,11 @@ const gridButton = document.createElement('button')
 gridButton.classList.add('button')
 gridButton.innerText = 'Grid Line'
 gridButton.style.backgroundColor = 'darkgray'
-canvasSection.appendChild(gridButton)
+// canvasSection.appendChild(gridButton)
+userSelection.appendChild(gridButton)
 
+const buffer = createDiv('buffer')
+userSelection.appendChild(buffer)
 
 //create pen color section 
 const penColorSection = createDiv('pen-color-section')
@@ -170,7 +179,9 @@ const penColorPicker = document.createElement("input")
 penColorPicker.classList.add('color-picker')
 penColorPicker.setAttribute('type', 'color')
 penColorPicker.setAttribute('value', penColor)
-penColorSection.appendChild(penColorPicker)
+// penColorSection.appendChild(penColorPicker)
+userSelection.appendChild(penColorPicker)
+
 
 // pen
 // const penSection = createDiv('pen-section')
@@ -179,21 +190,28 @@ penColorSection.appendChild(penColorPicker)
 const penButton = document.createElement('button')
 penButton.classList.add('button')
 penButton.innerText = 'Drawing Pen'
-penColorSection.appendChild(penButton)
+// penColorSection.appendChild(penButton)
+userSelection.appendChild(penButton)
 //rainbow pen
 const rainbowPenButton = document.createElement('button')
 rainbowPenButton.classList.add('button')
 rainbowPenButton.innerText = 'Rainbow Pen'
-penColorSection.appendChild(rainbowPenButton)
+// penColorSection.appendChild(rainbowPenButton)
+userSelection.appendChild(rainbowPenButton)
+
+const buffer2 = createDiv('buffer')
+userSelection.appendChild(buffer2)
 
 // eraser
-const eraserSection = createDiv('eraser-section')
-userSelection.appendChild(eraserSection)
+// const eraserSection = createDiv('eraser-section')
+// userSelection.appendChild(eraserSection)
 //create eraser button 
 const eraserButton = document.createElement('button')
 eraserButton.classList.add('button')
 eraserButton.innerText = 'Eraser'
-eraserSection.appendChild(eraserButton)
+// eraserSection.appendChild(eraserButton)
+userSelection.appendChild(eraserButton)
+
 
 
 
